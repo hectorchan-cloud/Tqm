@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Despedida ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-pastel: #FFF5F5;
+            --rojo-pastel: #FF6B6B;
+            --blanco-card: rgba(255, 255, 255, 0.95);
+        }
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--bg-pastel);
+            margin: 0; min-height: 100vh;
+            display: flex; justify-content: center; align-items: center;
+            overflow: hidden; position: relative;
+        }
+        .card {
+            background: var(--blanco-card);
+            padding: 40px; border-radius: 30px;
+            box-shadow: 0 15px 35px rgba(255, 107, 107, 0.15);
+            text-align: center; max-width: 600px; width: 90%;
+            z-index: 10; border: 2px solid #FFD3D3;
+            animation: fadeIn 1s ease-in;
+        }
+        h1 { font-family: 'Playfair Display', serif; color: var(--rojo-pastel); font-style: italic; }
+        .btn {
+            display: inline-block; background: var(--rojo-pastel); color: white;
+            padding: 12px 35px; text-decoration: none; border-radius: 25px;
+            font-weight: bold; margin-top: 20px; transition: 0.3s;
+        }
+        .btn:hover { background: #FF8787; transform: scale(1.05); }
+        .gif { width: 80vw; height: auto; max-height: 80vh; border-radius: 15px; margin-bottom: 20px; }
+        @keyframes fadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+        .flower { position: fixed; top: -10%; font-size: 24px; pointer-events: none; z-index: 1; animation: fall linear infinite; }
+        @keyframes fall { to { transform: translateY(110vh) translateX(-50px) rotate(-360deg); } }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1> Tqm como no se lo imagina</h1>
+        <p> Perodon por las veces que lo hago mal, es la primera ves que me quieren asi de bonito</p>
+        <img src="https://media.giphy.com/media/v6aOjy0Qo1fIA/giphy.gif" class="gif" alt="Gato sorprendido meme">
+        <p>Gracias por ser parte de mi vida.</p>
+        <a href="index.html" class="btn">tqm may ❤️</a>
+    </div>
+    <script>
+        const symbols = ['🌸', '🌹', '❤️', '✨'];
+        function createFlower() {
+            const f = document.createElement('div');
+            f.className = 'flower';
+            f.innerText = symbols[Math.floor(Math.random() * symbols.length)];
+            f.style.left = Math.random() * 100 + 'vw';
+            f.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            document.body.appendChild(f);
+            setTimeout(() => f.remove(), 7000);
+        }
+        setInterval(createFlower, 300);
+    </script>
+</body>
+</html>
